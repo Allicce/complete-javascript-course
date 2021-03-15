@@ -16,3 +16,21 @@ let $function = 27;
 const PI = 3.1415;
 
 
+/////////////////////////////////////////
+//DATA TYPES
+
+//PRIMITIVE DATA TYPES - number, string, boolean, undefined, null, symbol, BigInt
+//dynamic typing - data types are determined automatically VALUE HAS TYPE NOT VARIABLE
+let javascriptIsFun = true;
+console.log(javascriptIsFun);
+console.log(typeof javascriptIsFun);
+
+let year;
+console.log(year);
+console.log(typeof year);
+year = 1991;
+console.log(typeof year);
+
+//typeof null return object
+console.log(typeof null);
+

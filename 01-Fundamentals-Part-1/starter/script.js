@@ -109,6 +109,32 @@ GOOD LUCK 😀
 //
 // console.log(markHigherBMI);
 
+/////////////////////////////////////////
+//string and template literals
+
+const firstName = 'Jonas';
+const job = 'teacher';
+const birthYear = 1991;
+const year = 2037;
+
+const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+console.log(jonas);
+
+//better way template literals
+
+const jonasNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
+console.log(jonasNew);
+
+console.log('String \n\
+multiple \n\
+lines');
+
+console.log(`Strings
+multiple
+lines`);
+
+
+
 
 
 

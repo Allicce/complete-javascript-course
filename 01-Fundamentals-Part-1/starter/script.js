@@ -325,6 +325,13 @@ GOOD LUCK 😀
 //         console.log('Not a valid day')
 // }
 
+/////////////////////////////////////////
+//ternary operator
+
+// const age = 23;
+// age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water')
+
+
 
 
 

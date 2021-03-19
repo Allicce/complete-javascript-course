@@ -225,6 +225,17 @@ GOOD LUCK 😀
 //     console.log('Height is undefined')
 // }
 
+/////////////////////////////////////////
+//Equality operators
+
+// const age = '18';
+//
+// if(age === 18) console.log('You just become and adult strict')
+//
+// if(age == 18) console.log('You just become and adult loose')
+//
+// prompt("What is your favorite number?")
+
 
 
 

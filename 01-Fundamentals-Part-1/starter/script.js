@@ -96,42 +96,42 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 GOOD LUCK 😀
 */
 
-let markWeight = 78;
-let johnWeight = 92;
-let markHeight = 1.69;
-let johnHeight =1.95;
-
-let markBMI = markWeight / markHeight ** 2;
-let johnBMI = johnWeight / johnHeight ** 2;
-
-console.log (markBMI, johnBMI);
-let markHigherBMI = markBMI > johnBMI;
-
-console.log(markHigherBMI);
+// let markWeight = 78;
+// let johnWeight = 92;
+// let markHeight = 1.69;
+// let johnHeight =1.95;
+//
+// let markBMI = markWeight / markHeight ** 2;
+// let johnBMI = johnWeight / johnHeight ** 2;
+//
+// console.log (markBMI, johnBMI);
+// let markHigherBMI = markBMI > johnBMI;
+//
+// console.log(markHigherBMI);
 
 /////////////////////////////////////////
 //string and template literals
 
-const firstName = 'Jonas';
-const job = 'teacher';
-const birthYear = 1991;
-const year = 2037;
-
-const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
-console.log(jonas);
-
-//better way template literals
-
-const jonasNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
-console.log(jonasNew);
-
-console.log('String \n\
-multiple \n\
-lines');
-
-console.log(`Strings
-multiple
-lines`);
+// const firstName = 'Jonas';
+// const job = 'teacher';
+// const birthYear = 1991;
+// const year = 2037;
+//
+// const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+// console.log(jonas);
+//
+// //better way template literals
+//
+// const jonasNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
+// console.log(jonasNew);
+//
+// console.log('String \n\
+// multiple \n\
+// lines');
+//
+// console.log(`Strings
+// multiple
+// lines`);
 
 /////////////////////////////////////////
 //if else statements
@@ -159,17 +159,39 @@ HINT: Use an if/else statement 😉
 GOOD LUCK 😀
 */
 
-if(markBMI > johnBMI) {
-    console.log(`Mark's BMI ${markBMI} is higher than John's ${johnBMI}!`)
-} else {
-    console.log(`John's BMI ${johnBMI} is higher than Mark's ${markBMI}!`)
-}
+// if(markBMI > johnBMI) {
+//     console.log(`Mark's BMI ${markBMI} is higher than John's ${johnBMI}!`)
+// } else {
+//     console.log(`John's BMI ${johnBMI} is higher than Mark's ${markBMI}!`)
+// }
 
 
+/////////////////////////////////////////
+//type conversion and coercion
 
+//type conversion
+const inputYear = '1918'
+console.log(inputYear + 18);
+console.log(Number(inputYear) + 18);
+console.log(String(23));
 
+//type coercion
 
+console.log('I am ' + 23 + 'years old');
 
+//convert to number
+console.log('23' - '10' - 3);
+//convert to string
+console.log('23' + '10' + 3);
+//convert to number
+console.log('23' /'10');
+console.log('23' * '10');
+
+let n = '1' + 1;
+n = n - 1
+console.log(n)
+
+console.log('23' - '10' - '3' - 2 + '5');
 
 
 

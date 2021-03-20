@@ -26,3 +26,26 @@
 //
 // const appleOrangeJuice = fruitProcessor(2, 4);
 // console.log(appleOrangeJuice);
+
+////////////////////
+// functions declaration and expression
+
+//declaration
+
+// function declarationFunction() {
+//     return "";
+// }
+//
+// //expression
+//
+// const expressionFunction = function() {
+//     return "";
+// }
+
+////////////////////
+// arrow function
+
+// const arrowFunction = () => {
+//     return "";
+// }
+

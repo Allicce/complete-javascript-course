@@ -88,4 +88,31 @@ GOOD LUCK 😀
 //
 // checkWinner(scoreDolphins, scoreKoalas)
 
+////////////////////
+// Arrays
+
+// const friends = ['Michael', 'Steven', 'Peter'];
+//
+// const years = new Array(1991, 1984, 2008, 2020);
+//
+// console.log(friends[0]);
+// //only primitive value is imutable, this is reason why we can muteted element in array
+// friends[2] = 'Jana';
+//
+// //exercise
+//  const calcAge = (year) => {
+//      return 2037 - year;
+//  }
+//
+//  const years = [1990, 1697, 2002, 2010, 2018]
+//
+// const age1 = calcAge(years[0]);
+//  console.log(age1)
+//
+// const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years.length - 1)]
+//
+// console.log(ages)
+
+
+
 

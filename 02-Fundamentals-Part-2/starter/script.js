@@ -113,6 +113,35 @@ GOOD LUCK 😀
 //
 // console.log(ages)
 
+////////////////////
+// Array operation
+
+//ads elements
+const friends = ['Michael', 'Steven', 'Peter'];
+friends.push('Jay');
+
+friends.unshift('John');
+
+//remove elements
+const popped = friends.pop();
+console.log(popped);
+friends.shift();
+
+console.log(friends.indexOf('Steven'));
+//return -1 because bob is not in array
+console.log(friends.indexOf('Bob'));
+//return true
+console.log(friends.includes('Steven'));
+//return false
+console.log(friends.includes('Bob'));
+
+
+
+
+
+
+
+
 
 
 

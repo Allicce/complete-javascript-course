@@ -162,6 +162,44 @@ GOOD LUCK 😀
 //
 // console.log(totals)
 
+////////////////////
+// object
+
+// const jonas = {
+//     firstName: 'Jonas',
+//     lastName: 'Schmedtmann',
+//     // age: 2037 - 1991,
+//     birthYear: 1991,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven'],
+//     hasDriversLicense: true,
+//     // calcAge: (birthYear) => {
+//     //     return 2037 - birthYear
+//     // }
+//     // calcAge: () => {
+//     //         return 2037 - this.birthYear
+//     //     }
+//     calcAge: () => {
+//         this.age =  2037 - this.birthYear
+//         return this.age
+//     }
+// }
+//
+// console.log(jonas.lastName)
+// console.log(jonas['lastName'])
+//
+// jonas.location = 'Portugal'
+// jonas['twitter'] = '@jonasschmedtman'
+//
+// console.log(jonas)
+//
+// // console.log(jonas.calcAge(1991))
+// // console.log(jonas['calcAge'](1991))
+//
+// console.log(jonas.calcAge())
+
+
+
 
 
 

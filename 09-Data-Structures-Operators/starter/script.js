@@ -26,4 +26,32 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  }
 };
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+// Switching variables
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+const [starter, mainCourse] =restaurant.order(2, 0)
+console.log(starter, mainCourse);
+
+const nested = [2,4,[5,6]];
+
+// const [i,,j] = nested;
+// console.log(i, j);
+
+const [i, ,[j,k]] = nested;
+console.log(i,j,k);
+

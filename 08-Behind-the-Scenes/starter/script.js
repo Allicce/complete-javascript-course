@@ -35,3 +35,44 @@ calcAge(1991);
 
 //not defined
 // printAge();
+
+//Hoisting
+// console.log(me);
+// console.log(job);
+// console.log(year);
+
+var me = 'Jonas';
+let job = 'teacher';
+const year = 1991;
+
+console.log(addDec);
+console.log(addExpr);
+console.log(addArrow);
+
+function addDec(a,b) {
+    return a + b;
+}
+
+const addExpr = function(a,b) {
+    return a + b;
+}
+
+const addArrow = (a,b) => {
+    return a + b;
+}
+
+//Example
+if(!numProducts) deleteShoppingCart()
+var numProducts = 10;
+
+function deleteShoppingCart() {
+    console.log('all products deleted');
+}
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x);
+console.log(y === window.y);
+console.log(z === window.z);

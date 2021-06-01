@@ -152,28 +152,65 @@ calcAge(1991);
 // addArrow(2,5,6,7);
 
 //Primitives
-let age = 30;
-let oldAge = age;
-age = 31;
+// let age = 30;
+// let oldAge = age;
+// age = 31;
+//
+// //31
+// console.log(age);
+// //30
+// console.log(oldAge);
+//
+// //Objects
+// const me = {
+//     name: 'Jonas',
+//     age: 30,
+// }
+//
+// const friend = me;
+// friend.age = 27;
+//
+// //27
+// console.log('friend: ', friend);
+// //27
+// console.log('me', me);
 
-//31
-console.log(age);
-//30
-console.log(oldAge);
+let lastName = 'Williams'
+let oldLastName = 'Williams'
+lastName = 'Davis'
+console.log('lastName', lastName, ' oldLastName ', oldLastName);
 
-//Objects
-const me = {
-    name: 'Jonas',
-    age: 30,
+const jessica = {
+    firstName: 'Jessica',
+    lastName: 'Williams',
+    age: 27,
+    family: ['Alice', 'Bob']
 }
 
-const friend = me;
-friend.age = 27;
+const marriedJessica = jessica;
 
-//27
-console.log('friend: ', friend);
-//27
-console.log('me', me);
+marriedJessica.lastName = 'Davis';
+console.log('before marriage ', jessica, 'after marriage ', marriedJessica);
+
+//this not work because {} has new position in call stack
+//marriedJessica = {}
+
+const jessica2 = {
+    firstName: 'jessica',
+    lastName: 'Williams',
+    age: 27
+}
+
+//shell clone
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+console.log('jessica 2 ', jessica2, ' jessica copy ', jessicaCopy)
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+//family has all 4 family members!!!! need deep clone  for example library loadash
+console.log('jessica 2 ', jessica2, ' jessica copy ', jessicaCopy)
 
 
 

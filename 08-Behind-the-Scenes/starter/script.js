@@ -89,21 +89,68 @@ calcAge(1991);
 // }
 // calcAge2(1991);
 
+var firstName = 'Matilda';
+
 const jonas = {
+    firstName: 'Jonas',
     year: 1991,
     calcAge: function () {
         console.log(this)
         console.log(2037 - this.year)
-    }
+
+        //undefined
+        // const isMillenial = function() {
+        //    console.log(this.year >= 1981 && this.year <= 1996);
+        // }
+
+        //Solution 1
+        // const self = this;
+        // const isMillenial = function() {
+        //    console.log(self.year >= 1981 && self.year <= 1996);
+        // }
+
+        //Solution 2
+        const isMillenial = () => {
+           console.log(self.year >= 1981 && self.year <= 1996);
+        }
+        isMillenial()
+    },
+    greet: () => console.log(`Hey ${this.firstName}`)
 }
+// jonas.calcAge();
+//
+// const matilda = {
+//     year: 2017
+// }
+// //method borrowing
+// matilda.calcAge = jonas.calcAge;
+// matilda.calcAge();
+//
+// const f = jonas.calcAge;
+// f();
+
+//Print Hi Matilda because we use arrow function and this call global scope and in the global scope is var named firstName
+jonas.greet();
 jonas.calcAge();
 
-const matilda = {
-    year: 2017
-}
-//method borrowing
-matilda.calcAge = jonas.calcAge;
-matilda.calcAge();
+//argument keyword
 
-const f = jonas.calcAge;
-f();
+const addExpr = function (a, b) {
+    console.log(arguments);
+    return a + b;
+}
+
+addExpr(2,5);
+addExpr(2,5,6,8);
+
+//arguments is not defined this is exist onlu in regular function
+var addArrow = (a,b) => {
+    console.log(arguments);
+    return a+ b;
+}
+addArrow(2,5);
+addArrow(2,5,6,7);
+
+
+
+

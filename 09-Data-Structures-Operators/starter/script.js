@@ -135,40 +135,73 @@ restaurant.orderDelivery({
 //Rest pattern and parameters
 
 
-//1. destructuring
-const arr = [1,2,...[3,4]];
+// //1. destructuring
+// const arr = [1,2,...[3,4]];
+//
+// //Rest because on LEFT side of =
+// const [a,b, ...others] = [1,2,3,4,5];
+// console.log(a,b,others);
+//
+// const [pizza, , risotto, otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+// console.log(pizza,risotto,otherFood);
+//
+// //Objects
+//
+// const {sat, ...weekdays} = restaurant.openingHours;
+// console.log(weekdays);
+//
+// //2.functions
+// const add =  function(...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i<numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// }
+//
+// add(2,3);
+// add(5,3,7,2);
+// add(8,2,5,8,7,4,1,3,6);
+//
+// const x = [23,58,7];
+// add(...x);
+//
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'tomato');
+// restaurant.orderPizza('mushrooms')
 
-//Rest because on LEFT side of =
-const [a,b, ...others] = [1,2,3,4,5];
-console.log(a,b,others);
+//Circuiting
 
-const [pizza, , risotto, otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
-console.log(pizza,risotto,otherFood);
+//use ANY data type, return ANY data type, short-circuiting
+//results is 3
+console.log(3 || 'Jonas');
+//results Jonas
+console.log('' || 'Jonas');
+//return true
+console.log(true || 0);
+//return null
+console.log(undefined || null);
+// return Hello
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-//Objects
+const guest1 = restaurant.numGuests ? restaurant.numGuests: 10;
 
-const {sat, ...weekdays} = restaurant.openingHours;
-console.log(weekdays);
+console.log(guest1);
 
-//2.functions
-const add =  function(...numbers) {
-  let sum = 0;
-  for (let i = 0; i<numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
+const guest2 = restaurant.numGuests || 10;
+
+console.log('------------AND----------');
+//return 0
+console.log(0 && 'Jonas');
+//return Jonas
+console.log(7 && 'Jonas');
+//return null
+console.log('Hello' && 23 && null && 'Jonas')
+
+if(restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
 }
 
-add(2,3);
-add(5,3,7,2);
-add(8,2,5,8,7,4,1,3,6);
-
-const x = [23,58,7];
-add(...x);
-
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'tomato');
-restaurant.orderPizza('mushrooms')
-
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 
 

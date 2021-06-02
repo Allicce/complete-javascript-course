@@ -1,6 +1,6 @@
 'use strict';
 
-// Data needed for a later exercise
+//Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
@@ -31,9 +31,17 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function (obj) {
-    console.log(obj)
-  }
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    console.log(
+        `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+
+  orderPasta(ing1, ing2, ing3) {
+    console.log(
+        `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
 let [main, , secondary] = restaurant.categories;
@@ -82,3 +90,43 @@ restaurant.orderDelivery({
   mainIndex: 2,
   starterIndex: 2
 })
+
+//spread operator
+
+const arr = [7,8,9];
+const badNewArr = [1,2,arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+const newArr = [1,2, ...arr];
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+//copy array (shallow copy)
+const newMenuCopy = [...restaurant.mainMenu];
+// Join 2 arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+//Iterables: arrays, strings, maps, sets, NOT objects
+
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+
+const ingredients =[prompt('Lets make pasta Ingredient 1: '), prompt('Ingredient 2: '), prompt('Ingredient 3: ')];
+restaurant.orderPasta(...ingredients);
+
+//Objects
+const newRestaurant = {foundedIn: 1998, ...restaurant, founder: 'Guiseppe'}
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Roma';
+
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+
+

@@ -312,20 +312,44 @@ const game = {
 // team1 < team2 && console.log('team 1 is more likely to win');
 // team1 > team2 && console.log('team 2 is more likely to win');
 
-const menu2 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu2 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+//
+// for(const item of menu2) console.log(item);
+// //index
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`)
+// };
+//
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`)
+// };
+//
+// //array iterators
+// console.log(menu.entries());
 
-for(const item of menu2) console.log(item);
-//index
-for (const item of menu.entries()) {
-  console.log(`${item[0] + 1}: ${item[1]}`)
-};
+//error
+// console.log(restaurant.openingHours.mon.open)
 
-for (const [i, el] of menu.entries()) {
-  console.log(`${i + 1}: ${el}`)
-};
-
-//array iterators
-console.log(menu.entries());
-
-
-
+//optional chaining
+//if mont doesnt exist return immediately undefined
+// console.log(restaurant.openingHours.mon?.open)
+//
+// console.log(restaurant.openingHours?.mon?.open)
+//
+//
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+//
+// for(const day of days ) {
+//   console.log(day);
+//   const open = restaurant.openingHours[day]?.open ?? 'closed'
+//   console.log(`On ${day}, we open at ${open}`)
+// }
+//
+// //Methods
+// console.log(restaurant.order?.(0,1) ?? 'Method does not exist')
+// console.log(restaurant.orderRisotto?.(0,1) ?? 'Method does not exist')
+//
+// //Arrays
+// const users = [{name: 'Jonas', email: 'hello@jonas.com'}]
+//
+// console.log(users[0]?.name ?? 'user array is empty')

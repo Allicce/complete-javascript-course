@@ -353,3 +353,20 @@ const game = {
 // const users = [{name: 'Jonas', email: 'hello@jonas.com'}]
 //
 // console.log(users[0]?.name ?? 'user array is empty')
+
+const properties = Object.keys(openingHours)
+console.log(properties)
+
+let openStr = `We are open on ${properties.length}`
+
+for( const day of Object.keys(openingHours)) {
+  openStr += ` ${day}`
+}
+
+const entries = Object.entries(openingHours)
+console.log(entries)
+// has object with [] with 0:key and 1:value
+
+for (const [key, {open, close}] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`)
+}

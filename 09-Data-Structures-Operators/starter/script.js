@@ -395,21 +395,48 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 GOOD LUCK 😀
 */
 
-for(const [i ,score] of game.scored.entries()) {
-  console.log(`Goal ${i+1}: ${score}`)
-}
+// for(const [i ,score] of game.scored.entries()) {
+//   console.log(`Goal ${i+1}: ${score}`)
+// }
+//
+// let average = 0;
+// const odds = Object.values(game.odds)
+// for(const odd of odds) {
+//   average += odd
+// }
+// average /= odds.length
+//
+// // Odd of victory Bayern Munich: 1.33
+// // Odd of draw: 3.25
+// // Odd of victory Borrussia Dortmund: 6.5
+// for(const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === 'x'? 'draw' : `victory ${game[team]}`
+//   console.log(`odd of ${teamStr} ${odd}`)
+// }
 
-let average = 0;
-const odds = Object.values(game.odds)
-for(const odd of odds) {
-  average += odd
-}
-average /= odds.length
+const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza'])
+//all duplicants are gone
+console.log(ordersSet)
+// all element is unique and order is irrelevant
 
-// Odd of victory Bayern Munich: 1.33
-// Odd of draw: 3.25
-// Odd of victory Borrussia Dortmund: 6.5
-for(const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === 'x'? 'draw' : `victory ${game[team]}`
-  console.log(`odd of ${teamStr} ${odd}`)
-}
+console.log(ordersSet.size)
+console.log(ordersSet.has('Pizza'))
+console.log(ordersSet.has('Bread'))
+ordersSet.add('Garlic Bread')
+ordersSet.add('Garlic Bread')
+ordersSet.delete('Risotto')
+console.log(ordersSet)
+
+//doesn't work because set doesn't have indexes
+console.log(ordersSet[0])
+
+for (const order of ordersSet) console.log(order)
+
+//Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']
+
+const staffUnique = [...new Set(staff)];
+
+//clear all elements
+ordersSet.clear()
+

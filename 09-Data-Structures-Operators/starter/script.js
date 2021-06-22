@@ -414,29 +414,68 @@ GOOD LUCK 😀
 //   console.log(`odd of ${teamStr} ${odd}`)
 // }
 
-const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza'])
-//all duplicants are gone
-console.log(ordersSet)
-// all element is unique and order is irrelevant
+// const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza'])
+// //all duplicants are gone
+// console.log(ordersSet)
+// // all element is unique and order is irrelevant
+//
+// console.log(ordersSet.size)
+// console.log(ordersSet.has('Pizza'))
+// console.log(ordersSet.has('Bread'))
+// ordersSet.add('Garlic Bread')
+// ordersSet.add('Garlic Bread')
+// ordersSet.delete('Risotto')
+// console.log(ordersSet)
+//
+// //doesn't work because set doesn't have indexes
+// console.log(ordersSet[0])
+//
+// for (const order of ordersSet) console.log(order)
+//
+// //Example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']
+//
+// const staffUnique = [...new Set(staff)];
+//
+// //clear all elements
+// ordersSet.clear()
 
-console.log(ordersSet.size)
-console.log(ordersSet.has('Pizza'))
-console.log(ordersSet.has('Bread'))
-ordersSet.add('Garlic Bread')
-ordersSet.add('Garlic Bread')
-ordersSet.delete('Risotto')
-console.log(ordersSet)
+const rest = new Map();
+rest.set('name', 'Classico Italiano')
+rest.set(1, 'Firenze, Italy')
+rest.set(2, 'Lisbon Portugal')
 
-//doesn't work because set doesn't have indexes
-console.log(ordersSet[0])
+rest.set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+    .set('open', 11)
+    .set('close', 23)
+    .set(true, 'we are open')
+    .set(false, 'we are closed')
 
-for (const order of ordersSet) console.log(order)
+console.log(rest.get('name'))
+console.log(rest.get(true))
 
-//Example
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']
+const time = 21;
 
-const staffUnique = [...new Set(staff)];
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')))
 
-//clear all elements
-ordersSet.clear()
+console.log(rest.has('categories'))
+rest.delete('2')
+console.log(rest)
+
+console.log(rest.size)
+
+rest.set([1,2], 'Test')
+console.log(rest)
+
+//not the same object as a key on rest
+console.log(rest.get([1,2]))
+
+//fix
+const arr = [1,2]
+rest.set(arr, 'Test')
+console.log(rest.get(arr))
+
+rest.set(document.querySelector('h1'), 'Heading')
+
+rest.clear()
 

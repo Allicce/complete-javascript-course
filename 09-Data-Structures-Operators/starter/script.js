@@ -540,21 +540,56 @@ const gameEvents = new Map([
   [92, '🔶 Yellow card'],
 ]);
 
-console.log(gameEvents.values());
-const events = new Set(gameEvents.values());
-console.log(events);
+// console.log(gameEvents.values());
+// const events = new Set(gameEvents.values());
+// console.log(events);
+//
+// gameEvents.delete(64);
+//
+//
+// const time = [...gameEvents.keys().pop()]
+// console.log(time)
+// console.log(`An event happend, on average, every ${time/ gameEvents.size} minutes`)
+//
+// for( const [min, event] of gameEvents) {
+//   const half = min <= 45 ? 'FIRST' : 'SECOND';
+//   console.log(`[${half} HALF] ${min}: ${event}`)
+// }
 
-gameEvents.delete(64);
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
 
+console.log(plane[0])
+console.log(airline.length)
 
-const time = [...gameEvents.keys().pop()]
-console.log(time)
-console.log(`An event happend, on average, every ${time/ gameEvents.size} minutes`)
+console.log(airline.indexOf('r'))
+console.log(airline.lastIndexOf('r'))
+console.log(airline.indexOf('Portugal'))
+//case sensitive
+console.log(airline.indexOf('portugal'))
 
-for( const [min, event] of gameEvents) {
-  const half = min <= 45 ? 'FIRST' : 'SECOND';
-  console.log(`[${half} HALF] ${min}: ${event}`)
+console.log(airline.slice(4))
+console.log(airline.slice(4,7))
+
+console.log(airline.slice(0, airline.indexOf(' ')))
+console.log(airline.slice(airline.lastIndexOf(' ') + 1))
+
+//start from the end
+console.log(airline.slice(-2))
+console.log(airline.slice(1, -1))
+
+const checkMiddleSeat = (seat) => {
+  //B and E are middle seats
+  const s = seat.slice(-1)
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat')
+  } else console.log('You got lucky')
+
 }
+
+checkMiddleSeat('11B')
+checkMiddleSeat('23C')
+checkMiddleSeat('3E')
 
 
 

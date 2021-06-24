@@ -556,138 +556,187 @@ const gameEvents = new Map([
 //   console.log(`[${half} HALF] ${min}: ${event}`)
 // }
 
-const airline = 'TAP Air Portugal';
-const plane = 'A320';
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+//
+// console.log(plane[0])
+// console.log(airline.length)
+//
+// console.log(airline.indexOf('r'))
+// console.log(airline.lastIndexOf('r'))
+// console.log(airline.indexOf('Portugal'))
+// //case sensitive
+// console.log(airline.indexOf('portugal'))
+//
+// console.log(airline.slice(4))
+// console.log(airline.slice(4,7))
+//
+// console.log(airline.slice(0, airline.indexOf(' ')))
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1))
+//
+// //start from the end
+// console.log(airline.slice(-2))
+// console.log(airline.slice(1, -1))
+//
+// const checkMiddleSeat = (seat) => {
+//   //B and E are middle seats
+//   const s = seat.slice(-1)
+//   if (s === 'B' || s === 'E') {
+//     console.log('You got the middle seat')
+//   } else console.log('You got lucky')
+//
+// }
+//
+// checkMiddleSeat('11B')
+// checkMiddleSeat('23C')
+// checkMiddleSeat('3E')
+//
+// console.log(airline.toLocaleLowerCase())
+// console.log(airline.toUpperCase())
+//
+// const passenger = 'jONas'
+// const passengerLower = passenger.toLowerCase()
+// const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect)
+//
+// //Comparing email
+// const email = 'hello@jonas.io'
+// const loginEmail = ' Hello@Jonas.Io \n'
+//
+// // const lowerEmail = loginEmail.toLowerCase()
+// // const trimmedEmail = lowerEmail.trim()
+// // console.log(trimmedEmail)
+//
+// const normalizedEmail = loginEmail.toLowerCase().trim()
+// console.log(normalizedEmail)
+//
+// //replacing
+// const priceGB = '288,97L'
+// const priceUS = priceGB.replace('L', '$').replace(',','.')
+//
+// const announcement = 'All passengers come to boarding door 23, Boarding door 23'
+//
+// console.log(announcement.replace('door', 'gate'))
+// // console.log(announcement.replaceAll('door', 'gate'))
+//
+// console.log(announcement.replace(/door/g, 'gate'))
+//
+// const plane2 = 'A32neo'
+//
+// console.log(plane2.includes('A320'))
+// console.log(plane2.includes('Boeing'))
+// console.log(plane2.startsWith('Airb'))
+//
+// if(plane2.startsWith('Airbus') && plane2.endsWith('neo')) console.log('Part of the NEW Airbus family')
+//
+// const checkBaggage = (items) => {
+//   const baggage = items.toLowerCase()
+//   if(baggage.includes('knife') || baggage.includes('gun')) {
+//     console.log('You are not allowed on board')
+//   } else {
+//     console.log('Welcome aboard')
+//   }
+// }
+//
+// checkBaggage('I have a laptop, some Food and a pocket Knife')
+// checkBaggage('Sock and camera')
+// checkBaggage('Got some snacks and a gun for protection')
+//
+// console.log('a+very+nice+string'.split('+'))
+// console.log('Jonas Schedtmann'.split(' '))
+//
+// const [firstName, lastName] = 'Jonas Schedtmann'.split(' ')
+//
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ')
+// console.log(newName)
+//
+// const capitalizeName = (name) => {
+//   const names = name.split(' ')
+//   const namesUpper = []
+//   for(const n of names) {
+//   //  namesUpper.push( n[0].toUpperCase() + n.slice(1))
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()))
+//   }
+//
+//   console.log(namesUpper.join(' '))
+// }
+//
+// capitalizeName('jesicca and smith davis')
+// capitalizeName('jonas schmedtmann')
+//
+// //padding
+// const message = 'Go to gate 23!'
+// console.log(message.padStart(25, '+').padEnd(30, '+'))
+// console.log('Jonas'.padStart(25, '+').padEnd(30, '+'))
+//
+// const maskCreditCard = (number) => {
+//   const str = number + '';
+//   const last = str.slice(-4)
+//   return last.padStart(str.length, '*')
+// }
+//
+// console.log(maskCreditCard(433785245698745))
+// maskCreditCard('451258875411145')
+//
+// const message2 = 'Bad weather... All Departues Delayed'
+//
+// console.log(message2.repeat(5))
+//
+// const planesInLine = (n) => {
+//   console.log(`There are ${n} planes in line ${'lietadlo'.repeat(n)}`)
+// }
 
-console.log(plane[0])
-console.log(airline.length)
+///////////////////////////////////////
+// Coding Challenge #4
 
-console.log(airline.indexOf('r'))
-console.log(airline.lastIndexOf('r'))
-console.log(airline.indexOf('Portugal'))
-//case sensitive
-console.log(airline.indexOf('portugal'))
+/*
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
 
-console.log(airline.slice(4))
-console.log(airline.slice(4,7))
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
 
-console.log(airline.slice(0, airline.indexOf(' ')))
-console.log(airline.slice(airline.lastIndexOf(' ') + 1))
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable
+  calculate_AGE
+delayed_departure
 
-//start from the end
-console.log(airline.slice(-2))
-console.log(airline.slice(1, -1))
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
 
-const checkMiddleSeat = (seat) => {
-  //B and E are middle seats
-  const s = seat.slice(-1)
-  if (s === 'B' || s === 'E') {
-    console.log('You got the middle seat')
-  } else console.log('You got lucky')
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
 
-}
+Afterwards, test with your own test data!
 
-checkMiddleSeat('11B')
-checkMiddleSeat('23C')
-checkMiddleSeat('3E')
+GOOD LUCK 😀
+*/
 
-console.log(airline.toLocaleLowerCase())
-console.log(airline.toUpperCase())
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
 
-const passenger = 'jONas'
-const passengerLower = passenger.toLowerCase()
-const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect)
+const text = document.querySelector('textarea').value;
 
-//Comparing email
-const email = 'hello@jonas.io'
-const loginEmail = ' Hello@Jonas.Io \n'
+document.querySelector('button').addEventListener('click', () => {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows)
 
-// const lowerEmail = loginEmail.toLowerCase()
-// const trimmedEmail = lowerEmail.trim()
-// console.log(trimmedEmail)
-
-const normalizedEmail = loginEmail.toLowerCase().trim()
-console.log(normalizedEmail)
-
-//replacing
-const priceGB = '288,97L'
-const priceUS = priceGB.replace('L', '$').replace(',','.')
-
-const announcement = 'All passengers come to boarding door 23, Boarding door 23'
-
-console.log(announcement.replace('door', 'gate'))
-// console.log(announcement.replaceAll('door', 'gate'))
-
-console.log(announcement.replace(/door/g, 'gate'))
-
-const plane2 = 'A32neo'
-
-console.log(plane2.includes('A320'))
-console.log(plane2.includes('Boeing'))
-console.log(plane2.startsWith('Airb'))
-
-if(plane2.startsWith('Airbus') && plane2.endsWith('neo')) console.log('Part of the NEW Airbus family')
-
-const checkBaggage = (items) => {
-  const baggage = items.toLowerCase()
-  if(baggage.includes('knife') || baggage.includes('gun')) {
-    console.log('You are not allowed on board')
-  } else {
-    console.log('Welcome aboard')
+  for(const[i, row] of rows.entries()) {
+    console.log(row)
+    const[first, second] = row.toLowerCase().trim().split('_')
+    console.log(first)
+    console.log(second)
+    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
+    console.log(`${output.padEnd(20, ' ')} ${'✅'.repeat(i + 1)}`)
   }
-}
-
-checkBaggage('I have a laptop, some Food and a pocket Knife')
-checkBaggage('Sock and camera')
-checkBaggage('Got some snacks and a gun for protection')
-
-console.log('a+very+nice+string'.split('+'))
-console.log('Jonas Schedtmann'.split(' '))
-
-const [firstName, lastName] = 'Jonas Schedtmann'.split(' ')
-
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ')
-console.log(newName)
-
-const capitalizeName = (name) => {
-  const names = name.split(' ')
-  const namesUpper = []
-  for(const n of names) {
-  //  namesUpper.push( n[0].toUpperCase() + n.slice(1))
-    namesUpper.push(n.replace(n[0], n[0].toUpperCase()))
-  }
-
-  console.log(namesUpper.join(' '))
-}
-
-capitalizeName('jesicca and smith davis')
-capitalizeName('jonas schmedtmann')
-
-//padding
-const message = 'Go to gate 23!'
-console.log(message.padStart(25, '+').padEnd(30, '+'))
-console.log('Jonas'.padStart(25, '+').padEnd(30, '+'))
-
-const maskCreditCard = (number) => {
-  const str = number + '';
-  const last = str.slice(-4)
-  return last.padStart(str.length, '*')
-}
-
-console.log(maskCreditCard(433785245698745))
-maskCreditCard('451258875411145')
-
-const message2 = 'Bad weather... All Departues Delayed'
-
-console.log(message2.repeat(5))
-
-const planesInLine = (n) => {
-  console.log(`There are ${n} planes in line ${'lietadlo'.repeat(n)}`)
-}
-
-
-
+})
 
 
 

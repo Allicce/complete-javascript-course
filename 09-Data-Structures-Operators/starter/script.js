@@ -60,52 +60,52 @@ const restaurant = {
 
 
 
-let [main, , secondary] = restaurant.categories;
-console.log(main, secondary);
-
-// Switching variables
-// const temp = main;
-// main = secondary;
-// secondary = temp;
+// let [main, , secondary] = restaurant.categories;
 // console.log(main, secondary);
-
-[main, secondary] = [secondary, main];
-console.log(main, secondary);
-
-const [starter, mainCourse] =restaurant.order(2, 0)
-console.log(starter, mainCourse);
-
-const nested = [2,4,[5,6]];
-
-// const [i,,j] = nested;
-// console.log(i, j);
-
-const [i, ,[j,k]] = nested;
-console.log(i,j,k);
-
-const {name, openingHours, categories} = restaurant;
-console.log(name, openingHours, categories);
-
-const { menu = [], starterMenu: starters = []} = restaurant;
-
-//mutating variables
-let a = 111;
-let b = 999;
-const obj = {a: 23, b:7, c:14};
-
-({a, b} = obj)
-
-//nested objects
-
-const {fri: {open: o, close: c}} = openingHours
-console.log(o, c)
-
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2
-})
+//
+// // Switching variables
+// // const temp = main;
+// // main = secondary;
+// // secondary = temp;
+// // console.log(main, secondary);
+//
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
+//
+// const [starter, mainCourse] =restaurant.order(2, 0)
+// console.log(starter, mainCourse);
+//
+// const nested = [2,4,[5,6]];
+//
+// // const [i,,j] = nested;
+// // console.log(i, j);
+//
+// const [i, ,[j,k]] = nested;
+// console.log(i,j,k);
+//
+// const {name, openingHours, categories} = restaurant;
+// console.log(name, openingHours, categories);
+//
+// const { menu = [], starterMenu: starters = []} = restaurant;
+//
+// //mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = {a: 23, b:7, c:14};
+//
+// ({a, b} = obj)
+//
+// //nested objects
+//
+// const {fri: {open: o, close: c}} = openingHours
+// console.log(o, c)
+//
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2
+// })
 
 //spread operator
 
@@ -621,13 +621,13 @@ console.log(announcement.replace('door', 'gate'))
 
 console.log(announcement.replace(/door/g, 'gate'))
 
-const plane = 'A32neo'
+const plane2 = 'A32neo'
 
-console.log(plane.includes('A320'))
-console.log(plane.includes('Boeing'))
-console.log(plane.startsWith('Airb'))
+console.log(plane2.includes('A320'))
+console.log(plane2.includes('Boeing'))
+console.log(plane2.startsWith('Airb'))
 
-if(plane.startsWith('Airbus') && plane.endsWith('neo')) console.log('Part of the NEW Airbus family')
+if(plane2.startsWith('Airbus') && plane2.endsWith('neo')) console.log('Part of the NEW Airbus family')
 
 const checkBaggage = (items) => {
   const baggage = items.toLowerCase()
@@ -641,6 +641,52 @@ const checkBaggage = (items) => {
 checkBaggage('I have a laptop, some Food and a pocket Knife')
 checkBaggage('Sock and camera')
 checkBaggage('Got some snacks and a gun for protection')
+
+console.log('a+very+nice+string'.split('+'))
+console.log('Jonas Schedtmann'.split(' '))
+
+const [firstName, lastName] = 'Jonas Schedtmann'.split(' ')
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ')
+console.log(newName)
+
+const capitalizeName = (name) => {
+  const names = name.split(' ')
+  const namesUpper = []
+  for(const n of names) {
+  //  namesUpper.push( n[0].toUpperCase() + n.slice(1))
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()))
+  }
+
+  console.log(namesUpper.join(' '))
+}
+
+capitalizeName('jesicca and smith davis')
+capitalizeName('jonas schmedtmann')
+
+//padding
+const message = 'Go to gate 23!'
+console.log(message.padStart(25, '+').padEnd(30, '+'))
+console.log('Jonas'.padStart(25, '+').padEnd(30, '+'))
+
+const maskCreditCard = (number) => {
+  const str = number + '';
+  const last = str.slice(-4)
+  return last.padStart(str.length, '*')
+}
+
+console.log(maskCreditCard(433785245698745))
+maskCreditCard('451258875411145')
+
+const message2 = 'Bad weather... All Departues Delayed'
+
+console.log(message2.repeat(5))
+
+const planesInLine = (n) => {
+  console.log(`There are ${n} planes in line ${'lietadlo'.repeat(n)}`)
+}
+
+
 
 
 

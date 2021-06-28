@@ -51,29 +51,46 @@
 
 //passing with reference is not existing in js only passing with value and in the value is saved reference to object
 
-const oneWord = (str) => {
-    return str.replace(/ /g, '').toLowerCase();
-}
+// const oneWord = (str) => {
+//     return str.replace(/ /g, '').toLowerCase();
+// }
+//
+// const upperFirstWord = (str) => {
+//     const [first, ...others] = str.split(' ')
+//     return [first.toUpperCase(), ...others].join(' ')
+// }
+//
+// //higher-order function
+// const transformer = (str, fn) => {
+//     console.log('original string: ', str);
+//     console.log('transform by: ', fn.name);
+//     console.log('transformer string: ', fn(str));
+// }
+//
+// transformer('JavaScript is the best!', upperFirstWord);
+// transformer('JavaScript is the best!', oneWord);
+//
+// const high5 = () => {
+//     console.log('high5')
+// }
+//
+// document.body.addEventListener('click', high5);
+//
+// ['Jonas', 'Martina', 'Adam'].forEach(high5);
 
-const upperFirstWord = (str) => {
-    const [first, ...others] = str.split(' ')
-    return [first.toUpperCase(), ...others].join(' ')
-}
 
-//higher-order function
-const transformer = (str, fn) => {
-    console.log('original string: ', str);
-    console.log('transform by: ', fn.name);
-    console.log('transformer string: ', fn(str));
-}
+// const greet = (greeting) => {
+//     return function(name) {
+//         console.log(`${greeting} ${name}`)
+//     }
+// }
 
-transformer('JavaScript is the best!', upperFirstWord);
-transformer('JavaScript is the best!', oneWord);
+//shorter
+const greet = (greeting) => (name) => console.log(`${greeting} ${name}`)
 
-const high5 = () => {
-    console.log('high5')
-}
+//Closures
+const greeterHey = greet('Hey');
+greeterHey('Jonas')
+greeterHey('Adam')
 
-document.body.addEventListener('click', high5);
-
-['Jonas', 'Martina', 'Adam'].forEach(high5);
+greet('Hello')('Jonas');

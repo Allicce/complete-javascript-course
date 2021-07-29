@@ -85,12 +85,55 @@
 //     }
 // }
 
-//shorter
-const greet = (greeting) => (name) => console.log(`${greeting} ${name}`)
+// //shorter
+// const greet = (greeting) => (name) => console.log(`${greeting} ${name}`)
+//
+// //Closures
+// const greeterHey = greet('Hey');
+// greeterHey('Jonas')
+// greeterHey('Adam')
+//
+// greet('Hello')('Jonas');
 
-//Closures
-const greeterHey = greet('Hey');
-greeterHey('Jonas')
-greeterHey('Adam')
+const lufthansa = {
+    airline: 'Lufthansa',
+    iataCode: 'LH',
+    booking: [],
+    book(flightNum, name) {
+        console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`)
+        this.booking.push({flight: `${this.iataCode}${flightNum}`, name})
+    }
+}
 
-greet('Hello')('Jonas');
+lufthansa.book(239, 'Jonas Schedtmann')
+lufthansa.book(635, 'John Smith')
+
+const eurowings = {
+    name: 'Eurowings',
+    iataCode: 'EW',
+    booking: [],
+}
+
+const book = lufthansa.book
+
+// 1. option to call method this on function - 1 parameter in call is where is bind this keywords and then we added
+// others parameters from originals function
+book.call(eurowings, 23, 'Sarah Wiliams')
+console.log(eurowings)
+
+book.call(lufthansa, 235, 'Mary Cooper')
+console.log(lufthansa)
+
+const swiss = {
+    airline: 'Swiss',
+    iataCode: 'LX',
+    booking: [],
+}
+
+book.call(swiss, 583, 'Marry Cooper')
+console.log(swiss)
+
+//2. apply method - is not used in modern javascript any more
+const flightData = [583, 'George Cooper']
+book.apply(swiss, flightData)
+console.log(swiss)

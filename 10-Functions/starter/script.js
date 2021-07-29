@@ -109,7 +109,7 @@ lufthansa.book(239, 'Jonas Schedtmann')
 lufthansa.book(635, 'John Smith')
 
 const eurowings = {
-    name: 'Eurowings',
+    airline: 'Eurowings',
     iataCode: 'EW',
     booking: [],
 }
@@ -137,3 +137,46 @@ console.log(swiss)
 const flightData = [583, 'George Cooper']
 book.apply(swiss, flightData)
 console.log(swiss)
+
+//bind method - not call a book function - return new function
+const bookEW = book.bind(eurowings)
+const bookLH = book.bind(lufthansa)
+const bookLX = book.bind(swiss)
+
+bookEW(23, 'Steven Williams')
+console.log(eurowings)
+
+//we can preset other parameters from book function
+const bookEW23 = book.bind(eurowings, 23)
+bookEW23('Jonas Schedtmann')
+
+//with event listeners
+lufthansa.planes = 300
+lufthansa.buyPlane = function() {
+    console.log(this)
+
+    this.planes ++
+    console.log(this.planes)
+}
+
+//this keyword is point to button element
+// document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane)
+
+//fix with bind
+document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa))
+
+//partial aplication
+const addTax = (rate, value) => value + value * rate
+console.log(addTax(0.1, 200))
+
+const addVat = addTax.bind(null, 0.23)
+console.log(addVat(100))
+
+const addTaxRate = function (rate) {
+    return function (value) {
+        return value + value * rate
+    }
+}
+
+const addVAT2 = addTaxRate(0.23)
+console.log(addVAT2(100))

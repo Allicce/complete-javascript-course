@@ -250,12 +250,29 @@ GOOD LUCK 😀
 // poll.displayResults.call({answers: [5, 2, 3]}, 'string')
 
 //IIFE
-(function() {
-    console.log('this will never run again')
-    const isPrivate = 23;
-})();
+// (function() {
+//     console.log('this will never run again')
+//     const isPrivate = 23;
+// })();
+//
+// // console.log(isPrivate)
+//
+//
+// (() => console.log('this will never run again'))()
 
-// console.log(isPrivate)
+const secureBooking = function() {
+    let passengerCount = 0;
 
+    return function() {
+        passengerCount++;
+        console.log(`${passengerCount} passengers`);
+    }
+}
 
-(() => console.log('this will never run again'))()
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker)

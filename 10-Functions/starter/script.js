@@ -260,19 +260,73 @@ GOOD LUCK 😀
 //
 // (() => console.log('this will never run again'))()
 
-const secureBooking = function() {
-    let passengerCount = 0;
+// const secureBooking = function() {
+//     let passengerCount = 0;
+//
+//     return function() {
+//         passengerCount++;
+//         console.log(`${passengerCount} passengers`);
+//     }
+// }
+//
+// const booker = secureBooking();
+//
+// booker();
+// booker();
+// booker();
+//
+// console.dir(booker)
 
-    return function() {
-        passengerCount++;
-        console.log(`${passengerCount} passengers`);
+
+//example 1
+let f;
+const g = function () {
+    const a = 23;
+    f = function() {
+        console.log(a * 2);
     }
 }
 
-const booker = secureBooking();
+const h = function () {
+    const b = 777;
+    f = function() {
+        console.log(b * 2);
+    }
+}
 
-booker();
-booker();
-booker();
+g();
+f();
+//re-assigning the f function
+h();
+f();
 
-console.dir(booker)
+console.dir(f);
+
+//example 2
+
+const boardPassengers = function (n, wait) {
+    const perGroup = n / 3;
+
+    setTimeout(function () {
+        console.log(`we are now boarding all ${n} passengers`);
+        console.log(`there are three groups, each with ${perGroup} passengers`)
+    }, wait * 1000)
+
+    console.log(`we start boarding in ${wait} seconds`);
+}
+
+boardPassengers(180, 3);
+
+const boardPassengers2 = function (n, wait) {
+    
+    setTimeout(function () {
+        console.log(`we are now boarding all ${n} passengers`);
+        console.log(`there are three groups, each with ${perGroup} passengers`)
+    }, wait * 1000)
+
+    console.log(`we start boarding in ${wait} seconds`);
+}
+
+const perGroup = 1800;
+
+boardPassengers2(180, 3);
